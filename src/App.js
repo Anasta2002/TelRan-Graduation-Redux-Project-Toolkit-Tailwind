@@ -65,7 +65,7 @@ function App() {
   const products_state = useSelector(state => state.products.list);
 
   return (
-    <Context.Provider value={{ isDarkMode, toggleTheme }}>
+    <Context.Provider value={{ isDarkMode, toggleTheme, products_state }}>
       <Navbar 
         cart_number={cart_products?.length} 
         // wish_number={wishlist_products?.length}

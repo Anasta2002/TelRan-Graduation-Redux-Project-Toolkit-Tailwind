@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { root_url } from '../../global'
-import produce from 'immer'
 
 const initialState = {
     list: [],
+    category: '',
 }
 
 export const fetchProductByCategory = createAsyncThunk(
@@ -20,7 +20,6 @@ const productByCategory_slice = createSlice({
     initialState,
     reducers: {
         sortProductCategory(state, action) {
-            console.log('sort', state.list.data)
             if (action.payload === 'default') {
                 state.list.data.sort((a, b) => a.id - b.id);
             } else if (action.payload === 'title') {
@@ -33,30 +32,14 @@ const productByCategory_slice = createSlice({
         },
         filterProductCategory(state, action) {
             const { min_value, max_value } = action.payload;
-
-            state.list.data = state.list.data.map((el) => ({
-                ...el,
-                show_product: el.price >= min_value && el.price <= max_value,
-            }));
-
-            // // Сортируем элементы так, чтобы элементы с show_product: true были впереди
-            // state.list.data.sort((a, b) => {
-            //     if (a.show_product && !b.show_product) {
-            //         return -1;
-            //     } else if (!a.show_product && b.show_product) {
-            //         return 1;
-            //     } else {
-            //         // Если оба элемента имеют show_product: true или show_product: false, сохраняем текущий порядок
-            //         return 0;
-            //     }
-            // });
-            state.list.data = state.list.data.map((el) => {
+            state.list = state.list.map((el) => {
                 if (el.price >= min_value && el.price <= max_value) {
-                    return { ...el, show_product: true };
+                    el.show_product = true
                 } else {
-                    return { ...el, show_product: false };
+                    el.show_product = false
                 }
-            });
+                return el
+            })
         },
         getCheapProductCategory(state, action) {
             if (action.payload) {
@@ -80,7 +63,8 @@ const productByCategory_slice = createSlice({
             })
             .addCase(fetchProductByCategory.fulfilled, (state, action) => {   //success
                 state.status = 'ready'
-                state.list = action.payload
+                state.category = action.payload.category
+                state.list = action.payload.data.map(el => ({...el, show_product: true}))
             })
             .addCase(fetchProductByCategory.rejected, (state) => {   //rejected
                 state.status = 'error'

@@ -15,7 +15,7 @@
 }
 
 .image {
-  @apply w-52 h-44 rounded-normal;
+  @apply w-52 h-44 rounded-normal bg-cover;
 }
 
 .empty_cart {
@@ -27,11 +27,11 @@
 }
 
 .order_details {
-  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5;
+  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5 lg:fixed lg:right-[60px];
 }
 
 .full_cart_content {
-  @apply flex justify-between w-full flex-col lg:flex-row;
+  @apply flex justify-between w-full flex-col relative lg:flex-row;
 }
 
 .cart_cards {

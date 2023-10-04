@@ -15,9 +15,8 @@ export default function ProductByCategory() {
     dispatch(fetchProductByCategory(id))
   }, [])
 
-  const data = useSelector(state => state.product_category.list)
-  const title = data?.category
-  const products = data?.data
+  const products = useSelector(state => state.product_category.list)
+  const title = useSelector(state => state.product_category.category)
 
   return (
     <Container>
@@ -25,8 +24,10 @@ export default function ProductByCategory() {
       <SortingBlock />
       <div className='cards_container'>
         {
-          products?.map(el => ({...el, show_product: true}))
-          .filter(el => el.show_product).map(el => <ProductCard key={el.id} {...el} />)
+          products
+          // ?.map(el => ({...el, show_product: true}))
+          .filter(el => el.show_product)
+          .map(el => <ProductCard key={el.id} {...el} />)
         }
       </div>      
     </Container>
