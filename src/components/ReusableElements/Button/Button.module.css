@@ -1,0 +1,10 @@
+.button_primary {
+  @apply bg-green w-full h-12 border-none text-white dark:text-black flex items-center justify-center p-4 rounded-md no-underline font-bold cursor-pointer hover:scale-105;
+  > svg {
+    @apply bg-transparent stroke-white dark:stroke-black;
+  }
+}
+
+.button_secondary {
+  @apply w-full h-12 bg-transparent border-2 border-white rounded-middle text-2xl font-bold hover:scale-105;
+}

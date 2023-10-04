@@ -1,0 +1,43 @@
+.cart_elements {
+  @apply w-full h-full rounded-2xl;
+}
+
+.empty_cart {
+  @apply text-center;
+}
+
+.precart {
+  @apply h-[420px] overflow-scroll mx-auto flex px-2 md:px-5;
+}
+
+.increment_decrement_btns {
+  @apply bg-green w-5 h-5 flex items-center justify-center rounded-tiny mx-1;
+}
+
+.image {
+  @apply w-52 h-44 rounded-normal;
+}
+
+.empty_cart {
+  @apply flex justify-center flex-col items-center w-full;
+
+  > svg {
+    @apply md:w-[75px] md:h-[64px] mb-5;
+  }
+}
+
+.order_details {
+  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5;
+}
+
+.full_cart_content {
+  @apply flex justify-between w-full flex-col lg:flex-row;
+}
+
+.cart_cards {
+  @apply w-full md:w-7/12;
+}
+
+.card {
+  @apply flex justify-between py-2  border-green border-y;
+}

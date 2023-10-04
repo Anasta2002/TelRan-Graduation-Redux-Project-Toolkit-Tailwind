@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  @apply p-0 m-0 box-border font-[Montserrat] font-medium bg-slate-50 dark:bg-black text-black dark:text-slate-50;
+}
+
+.h1 {
+  @apply text-5xl font-bold py-5 bg-transparent md:text-7xl text-center;
+}
+
+.h2 {
+  @apply font-semibold text-3xl py-4 bg-transparent md:text-5xl text-center;
+}
+
+.h3 {
+  @apply font-medium text-2xl py-3 bg-transparent md:text-4xl text-center;
+}
+
+.h4 {
+  @apply font-normal text-xl py-2 bg-transparent md:text-3xl text-center;
+}
+
+.cards_container {
+  @apply grid gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 bg-transparent;
+}

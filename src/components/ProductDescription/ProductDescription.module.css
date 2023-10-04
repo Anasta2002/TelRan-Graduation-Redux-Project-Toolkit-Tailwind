@@ -1,0 +1,15 @@
+.img {
+  @apply h-80 w-full md:h-[700px] md:w-[700px] rounded-normal justify-self-center;
+  grid-area: img;
+}
+
+.card_descr {
+  grid-area: card_descr;
+  justify-self: start;
+}
+
+.container_card {
+  @apply flex flex-col lg:grid items-center gap-5;
+  grid-template-areas: "img card_descr";
+  grid-template-columns: 3fr 2fr;
+}

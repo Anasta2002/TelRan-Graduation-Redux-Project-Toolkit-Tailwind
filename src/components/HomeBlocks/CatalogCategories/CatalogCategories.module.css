@@ -1,0 +1,11 @@
+.catalog_blog_header {
+  @apply flex items-center justify-center flex-col;
+
+  > a > button {
+    @apply px-2 py-1 cursor-pointer mb-5 border border-green text-base;
+  }
+}
+
+.one_line_container {
+  @apply h-[400px] overflow-hidden;
+}

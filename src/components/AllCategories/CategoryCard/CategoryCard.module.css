@@ -1,0 +1,7 @@
+.category_card {
+  @apply w-full h-[350px] rounded-normal relative hover:border;
+}
+
+.card_title {
+  @apply font-semibold text-2xl text-center p-3;
+}

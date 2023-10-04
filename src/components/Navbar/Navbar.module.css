@@ -1,0 +1,35 @@
+.nav {
+  @apply flex justify-between items-center p-4;
+}
+
+.right_part {
+  @apply flex items-center;
+
+  > a {
+    @apply block no-underline p-3 font-medium rounded-md text-base;
+
+    > svg {
+      @apply md:ml-14 hover:scale-125;
+    }
+
+    /* .tooltip {
+      @apply hidden;
+    } */
+
+    /* &:hover {
+      @apply bg-black;
+    } */
+  }
+
+  > svg {
+    @apply md:ml-14;
+  }
+}
+
+.left_part {
+  @apply hidden md:flex items-center justify-between md:w-[400px] lg:w-[450px];
+
+  > a > button {
+    @apply md:w-28 lg:w-40;
+  }
+}

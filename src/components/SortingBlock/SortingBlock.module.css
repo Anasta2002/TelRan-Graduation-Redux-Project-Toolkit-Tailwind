@@ -1,0 +1,23 @@
+.sorting_wrapper {
+  @apply flex flex-col align-middle my-5 lg:flex-row mt-6 mb-10;
+}
+
+.sorting_section {
+  @apply flex items-center mr-7;
+}
+
+.sorting_title {
+  @apply font-semibold text-xl pr-2;
+}
+
+.price_input {
+  @apply w-24 h-11 border rounded-md mx-2;
+}
+
+.selector {
+  @apply w-32 h-11 border rounded-md;
+}
+
+.checkbox {
+  @apply w-5 h-5 border-2 border-green;
+}

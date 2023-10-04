@@ -1,0 +1,35 @@
+.new_season {
+  @apply text-5xl text-white leading-[82px] bg-transparent;
+}
+
+.sale_btn {
+  @apply w-[155px] h-20 bg-transparent rounded-lg text-white p-3 text-4xl py-3 font-bold mt-7;
+}
+
+.green_banner {
+  @apply bg-green mt-5 w-full h-[485px] lg:bg-[url("../../assets/green_banner.png")] lg:mt-10 bg-cover flex justify-center items-center;
+}
+
+.info_block {
+  @apply w-1/2 bg-transparent m-auto lg:m-0 md:w-1/4 my-auto text-center;
+}
+
+.green_banner_content {
+  @apply w-11/12 mx-auto lg:w-9/12 bg-transparent lg:flex lg:justify-end;
+}
+
+.green_banner_info_block {
+  @apply w-full bg-transparent my-auto lg:w-1/3 lg:mr-0;
+
+  > form > button {
+    @apply text-white;
+  }
+}
+
+.color {
+  @apply text-white;
+}
+
+.container {
+  @apply w-11/12 h-full mx-auto lg:w-9/12 bg-transparent flex items-center;
+}

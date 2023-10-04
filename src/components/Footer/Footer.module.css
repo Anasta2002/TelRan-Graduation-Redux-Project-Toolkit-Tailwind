@@ -1,0 +1,19 @@
+.footer_wrapper {
+  @apply p-10 mt-10;
+}
+
+.footer {
+  @apply flex flex-col md:flex-row justify-between mb-5;
+}
+
+.side_part {
+  @apply flex flex-col items-center;
+}
+
+.contact_icon {
+  @apply py-3 pr-5 first:px-5 hover:scale-110;
+}
+
+.footer_map {
+  @apply h-96 w-full md:h-[500px] lg:h-[600px] rounded-normal border-2 border-black dark:border-white;
+}

@@ -1,0 +1,19 @@
+.inner_container {
+  /* @apply h-[520px] w-full rounded-2xl flex justify-center items-center; */
+  @apply w-full h-full rounded-2xl;
+}
+
+.empty_wish {
+  @apply mx-auto;
+  > svg {
+    @apply mx-auto;
+  }
+
+  > p {
+    @apply text-center p-5;
+  }
+}
+
+.wish_container {
+  @apply h-[420px] overflow-scroll mx-auto flex items-center px-2 md:px-5;
+}
