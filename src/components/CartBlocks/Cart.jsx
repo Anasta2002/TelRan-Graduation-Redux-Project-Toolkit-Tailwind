@@ -12,9 +12,9 @@ export default function Cart({cart_products}) {
   
   const total = cart_products.reduce((acc, { price, count }) => acc + price * count, 0);
 
-  // useEffect(() => {
-  //     localStorage.setItem('product', JSON.stringify(cart_products))
-  // }, [cart_products])
+  useEffect(() => {
+      localStorage.setItem('shopping_cart', JSON.stringify(cart_products))
+  }, [cart_products])
 
 
   return (    
