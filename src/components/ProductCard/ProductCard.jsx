@@ -5,7 +5,7 @@ import { root_url } from '../../global'
 import Cart from '../../assets/icons/Cart'
 import { useDispatch } from 'react-redux';
 import Heart from '../../assets/icons/Heart';
-import Button from '../ReusableElements/Button/Button';
+import Button from '../UI/Button/Button';
 import { addProductToTotalCart } from '../../store/slices/cart_slice'
 import { addProductToWishlist } from '../../store/slices/wishlist_slice'
 

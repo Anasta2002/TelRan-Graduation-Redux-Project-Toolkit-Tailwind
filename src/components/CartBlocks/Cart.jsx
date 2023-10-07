@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { decrementCart, incrementCart } from '../../store/slices/cart_slice';
 import { root_url } from '../../global';
-import PhoneNumberForm from '../ReusableElements/PhoneNumberForm/PhoneNumberForm';
+import PhoneNumberForm from '../UI/PhoneNumberForm/PhoneNumberForm';
 
 export default function Cart({cart_products}) {
   const dispatch = useDispatch()

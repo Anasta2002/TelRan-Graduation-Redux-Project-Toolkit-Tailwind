@@ -1,6 +1,6 @@
 import React from 'react'
 import AllCategories from '../components/AllCategories/AllCategories'
-import Container from '../components/ReusableElements/Container/Container';
+import Container from '../components/UI/Container/Container';
 
 
 export default function Categories() {

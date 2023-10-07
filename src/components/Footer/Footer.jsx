@@ -6,7 +6,7 @@ import Phone from '../../assets/icons/Phone'
 import Facebook from '../../assets/icons/Facebook'
 import Twitter from '../../assets/icons/Twitter';
 import Messager from '../../assets/icons/Messager'
-import Container from '../ReusableElements/Container/Container'
+import Container from '../UI/Container/Container'
 
 export default function Footer() {
   return (

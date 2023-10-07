@@ -32,7 +32,6 @@ const products_slice = createSlice({
         },
         filterProductsAction(state, action) {
             const { min_value, max_value } = action.payload;
-            console.log('categ', state.list)
             state.list = state.list.map((el) => {
                 if (el.price >= min_value && el.price <= max_value) {
                     return { ...el, show_product: true };

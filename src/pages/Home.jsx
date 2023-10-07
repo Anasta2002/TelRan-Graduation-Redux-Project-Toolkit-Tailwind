@@ -1,10 +1,8 @@
 import React from 'react'
-import CatalogCategories from '../components/HomeBlocks/CatalogCategories/CatalogCategories';
-import GreenHomeBanner from '../components/Banners/GreenHomeBanner';
-import HomeBanner from '../components/Banners/HomeBanner';
-import SaleBlock from '../components/SaleBlock/SaleBlock';
-
-
+import CatalogCategories from '../components/HomeBlocks/CatalogCategories/CatalogCategories'
+import GreenHomeBanner from '../components/Banners/GreenHomeBanner'
+import HomeBanner from '../components/Banners/HomeBanner'
+import SaleBlock from '../components/HomeBlocks/CatalogCategories/SaleBlock'
 
 export default function Home() {
   return (
@@ -12,7 +10,7 @@ export default function Home() {
         <HomeBanner />
         <CatalogCategories />
         <GreenHomeBanner />
-        <SaleBlock />
+        <SaleBlock/>
     </div>
   )
 }

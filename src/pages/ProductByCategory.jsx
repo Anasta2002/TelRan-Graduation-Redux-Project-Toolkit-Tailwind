@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard/ProductCard'
 import SortingBlock from '../components/SortingBlock/SortingBlock';
 import { fetchProductByCategory } from '../store/slices/productByCategory_slice'
-import Container from '../components/ReusableElements/Container/Container';
+import Container from '../components/UI/Container/Container';
 
 
 export default function ProductByCategory() {
@@ -25,8 +25,7 @@ export default function ProductByCategory() {
       <div className='cards_container'>
         {
           products
-          // ?.map(el => ({...el, show_product: true}))
-          .filter(el => el.show_product)
+          ?.filter(el => el.show_product)
           .map(el => <ProductCard key={el.id} {...el} />)
         }
       </div>      

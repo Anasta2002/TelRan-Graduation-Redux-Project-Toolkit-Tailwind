@@ -17,6 +17,7 @@ import { Context } from './context';
 import { fetchProduct } from './store/slices/product_slice';
 import { fetchCategories } from './store/slices/category_slice';
 import { fetchProducts } from './store/slices/products_slice';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 
 function App() {
   //function for theme switching
@@ -50,6 +51,7 @@ function App() {
   // categories state
   useEffect(() => {
     dispatch(fetchCategories())
+    dispatch(fetchProducts())
   }, [])
 
   //cart state
@@ -59,9 +61,9 @@ function App() {
   const wishlist_products = useSelector(state => state.wishlist)
 
   //products state
-  useEffect(() => {
-    dispatch(fetchProducts())
-  }, [])
+  // useEffect(() => {
+  //   dispatch(fetchProducts())
+  // }, [])
   const products_state = useSelector(state => state.products.list);
 
   return (
@@ -70,6 +72,7 @@ function App() {
         cart_number={cart_products?.length} 
         // wish_number={wishlist_products?.length}
       />
+      <Breadcrumbs />
       <Routes>
         <Route path={'/'} element={<Home />} />
         <Route path={'/categories'} element={<Categories />} />

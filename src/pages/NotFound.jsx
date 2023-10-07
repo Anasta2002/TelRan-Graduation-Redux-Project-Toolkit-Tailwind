@@ -1,6 +1,6 @@
 import React from 'react'
 import error from '../assets/404.png'
-import Banner from '../components/ReusableElements/Banner/Banner'
+import Banner from '../components/UI/Banner/Banner'
 
 export default function NotFound() {
   return (

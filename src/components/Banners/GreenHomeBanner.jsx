@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Banners.module.css'
-import PhoneNumberForm from '../ReusableElements/PhoneNumberForm/PhoneNumberForm';
+import PhoneNumberForm from '../UI/PhoneNumberForm/PhoneNumberForm';
 
 export default function GreenHomeBanner() {
   return (

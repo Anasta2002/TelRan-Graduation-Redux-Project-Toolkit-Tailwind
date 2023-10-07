@@ -21,13 +21,13 @@ const productByCategory_slice = createSlice({
     reducers: {
         sortProductCategory(state, action) {
             if (action.payload === 'default') {
-                state.list.data.sort((a, b) => a.id - b.id);
+                state.list.sort((a, b) => a.id - b.id);
             } else if (action.payload === 'title') {
-                state.list.data.sort((a, b) => a.title.localeCompare(b.title));
+                state.list.sort((a, b) => a.title.localeCompare(b.title));
             } else if (action.payload === 'price_low') {
-                state.list.data.sort((a, b) => a.price - b.price);
+                state.list.sort((a, b) => a.price - b.price);
             } else if (action.payload === 'price_high') {
-                state.list.data.sort((a, b) => b.price - a.price);
+                state.list.sort((a, b) => b.price - a.price);
             }
         },
         filterProductCategory(state, action) {

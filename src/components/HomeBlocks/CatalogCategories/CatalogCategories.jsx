@@ -1,9 +1,9 @@
 import React from 'react'
 import AllCategories from '../../AllCategories/AllCategories'
-import s from './CatalogCategories.module.css'
+import s from './index.module.css'
 import { Link } from 'react-router-dom'
-import Container from '../../ReusableElements/Container/Container'
-import Button from '../../ReusableElements/Button/Button'
+import Container from '../../UI/Container/Container'
+import Button from '../../UI/Button/Button'
 
 export default function Catalog_categories() {
   return (

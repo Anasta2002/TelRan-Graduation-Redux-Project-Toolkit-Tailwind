@@ -1,6 +1,6 @@
 import React from 'react'
 import Cart from '../components/CartBlocks/Cart';
-import Banner from '../components/ReusableElements/Banner/Banner';
+import Banner from '../components/UI/Banner/Banner';
 
 export default function CartPage({cart_products}) {
 

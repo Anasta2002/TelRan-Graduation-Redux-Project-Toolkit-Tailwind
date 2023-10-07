@@ -1,5 +1,5 @@
 .nav {
-  @apply flex justify-between items-center p-4;
+  @apply flex justify-between items-center p-4 shadow-xl;
 }
 
 .right_part {

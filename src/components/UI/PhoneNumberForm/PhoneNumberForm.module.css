@@ -1,0 +1,7 @@
+.phone_input {
+  @apply bg-transparent;
+
+  > p {
+    @apply mb-4 text-center rounded-middle;
+  }
+}

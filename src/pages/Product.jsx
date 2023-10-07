@@ -13,12 +13,14 @@ export default function Product() {
     dispatch(fetchProduct(id))
   }, [])
 
-  const product = useSelector(state => state.product?.list)
-  const product_state = product?.map(el => el[0])
+  const product_state = useSelector(state => state.product.list)
+
+  console.log('product_page', product_state)
+  console.log(id)
 
   return (
     <div>
-        <ProductDescription product={product_state}/>
+        <ProductDescription product_state={product_state}/>
     </div>
   )
 }

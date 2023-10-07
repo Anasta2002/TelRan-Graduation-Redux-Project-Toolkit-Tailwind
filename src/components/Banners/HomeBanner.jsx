@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import s from './Banners.module.css'
-import Button from '../ReusableElements/Button/Button'
-import Banner from '../ReusableElements/Banner/Banner'
+import Button from '../UI/Button/Button'
+import Banner from '../UI/Banner/Banner'
 
 
 export default function HomeBanner() {

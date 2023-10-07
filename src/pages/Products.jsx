@@ -1,7 +1,7 @@
 import React from 'react'
 import SortingBlock from '../components/SortingBlock/SortingBlock';
 import ProductCard from '../components/ProductCard/ProductCard';
-import Container from '../components/ReusableElements/Container/Container';
+import Container from '../components/UI/Container/Container';
 
 
 export default function Products({products}) {

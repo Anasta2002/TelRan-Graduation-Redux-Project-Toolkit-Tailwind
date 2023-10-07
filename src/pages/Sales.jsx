@@ -1,15 +1,14 @@
 import React from 'react'
 import SortingBlock from '../components/SortingBlock/SortingBlock'
 import ProductCard from '../components/ProductCard/ProductCard'
-import Container from '../components/ReusableElements/Container/Container'
+import Container from '../components/UI/Container/Container'
 
 export default function Sales({products}) {
 
   return (
     <Container>
-      <h1>Products with sale</h1>
+      <h1 className='h2'>Products with sale</h1>
       <SortingBlock products={products} />
-
       <div className='cards_container'>
             {products
                 ?.filter(el => el.discont_price !== null)

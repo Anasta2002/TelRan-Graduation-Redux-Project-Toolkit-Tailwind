@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import ProductCard from '../ProductCard/ProductCard';
-import Banner from '../ReusableElements/Banner/Banner';
+import Banner from '../UI/Banner/Banner';
 import EmptyWishlist from '../../assets/images_svg/EmptyWishlist';
 import s from './Wishlist.module.css';
 

@@ -7,19 +7,19 @@
 }
 
 .h1 {
-  @apply text-5xl font-bold py-5 bg-transparent md:text-7xl text-center;
+  @apply text-5xl font-bold py-5 bg-transparent md:text-7xl text-center lg:my-5;
 }
 
 .h2 {
-  @apply font-semibold text-3xl py-4 bg-transparent md:text-5xl text-center;
+  @apply font-semibold text-3xl py-4 bg-transparent md:text-5xl text-center lg:my-4;
 }
 
 .h3 {
-  @apply font-medium text-2xl py-3 bg-transparent md:text-4xl text-center;
+  @apply font-medium text-2xl py-3 bg-transparent md:text-4xl text-center lg:my-3;
 }
 
 .h4 {
-  @apply font-normal text-xl py-2 bg-transparent md:text-3xl text-center;
+  @apply font-normal text-xl py-2 bg-transparent md:text-3xl text-center lg:my-2;
 }
 
 .cards_container {
