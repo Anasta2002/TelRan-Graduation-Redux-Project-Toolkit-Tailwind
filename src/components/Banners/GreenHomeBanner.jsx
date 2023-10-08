@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Banners.module.css'
-import PhoneNumberForm from '../UI/PhoneNumberForm/PhoneNumberForm';
+import SubmitForm from '../UI/SubmitForm/SubmitForm';
 
 export default function GreenHomeBanner() {
   return (
@@ -9,7 +9,7 @@ export default function GreenHomeBanner() {
         <div className={s.green_banner_info_block}>
             <div className={['h1', s.color].join(' ')}>5% off</div>
             <div  className={['h2', s.color].join(' ')}>On the first order</div>
-            <PhoneNumberForm name='Get a discount' className='secondary' />
+            <SubmitForm name='Get a discount' className='secondary' />
         </div>
       </div>
     </div>

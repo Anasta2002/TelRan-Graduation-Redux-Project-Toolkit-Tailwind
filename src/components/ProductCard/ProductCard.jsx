@@ -16,12 +16,12 @@ export default function ProductCard({ id, title, price, image, discont_price, de
 
   const addToCartBtn = (e) => {
     e.stopPropagation()
-    dispatch(addProductToTotalCart({ id, title, image, discont_price, description }))
+    dispatch(addProductToTotalCart({ id, title, image, discont_price, description, price }))
   };
 
   const addToWishtBtn = (e) => {
     e.stopPropagation()
-    dispatch(addProductToWishlist({ id, title, image, discont_price, description }))
+    dispatch(addProductToWishlist({ id, title, image, discont_price, description, price  }))
   };
 
   const handleCardClick = (e) => {

@@ -2,16 +2,20 @@
   @apply w-full h-full rounded-2xl;
 }
 
-.empty_cart {
-  @apply text-center;
-}
-
 .precart {
   @apply h-[420px] overflow-scroll mx-auto flex px-2 md:px-5;
 }
 
 .increment_decrement_btns {
-  @apply bg-green w-5 h-5 flex items-center justify-center rounded-tiny mx-1;
+  @apply flex;
+
+  > button {
+    @apply w-5 h-5 flex items-center justify-center rounded-tiny;
+  }
+
+  > span {
+    @apply mx-3;
+  }
 }
 
 .image {
@@ -27,11 +31,11 @@
 }
 
 .order_details {
-  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5 xl:fixed xl:right-[60px] lg:absolute;
+  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5 xl:absolute xl:right-[60px];
 }
 
 .full_cart_content {
-  @apply flex justify-between w-full flex-col relative xl:flex-row relative;
+  @apply flex justify-between w-full flex-col relative xl:flex-row;
 }
 
 .cart_cards {
@@ -40,4 +44,16 @@
 
 .card {
   @apply flex justify-between py-2  border-green border-y;
+}
+
+.cart_card_content_left {
+  @apply flex flex-col justify-center text-xl xl:w-72 pl-7;
+}
+
+.cart_card_content_right {
+  @apply flex flex-col justify-center items-center text-xl xl:w-64 relative;
+
+  > svg {
+    @apply absolute top-3 right-3 cursor-pointer;
+  }
 }

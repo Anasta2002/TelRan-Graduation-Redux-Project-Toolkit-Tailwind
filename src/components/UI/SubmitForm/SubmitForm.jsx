@@ -2,10 +2,10 @@ import React from 'react'
 import PhoneInput from '../PhoneInput/PhoneInput'
 import Button from '../Button/Button'
 import { useForm } from 'react-hook-form'
-import { submitPhoneNumber } from '../../../requests'
-import s from './PhoneNumberForm.module.css'
+import { submitOrder, submitPhoneNumber } from '../../../requests'
+import s from './SubmitForm.module.css'
 
-export default function PhoneNumberForm({name, className }) {
+export default function SubmitForm({ name, className }) {
     const { register, formState: { errors }, handleSubmit, reset } = useForm({
         mode: 'onSubmit',
     })
@@ -19,7 +19,9 @@ export default function PhoneNumberForm({name, className }) {
     })
 
     const submit = data => {
-        submitPhoneNumber(data)
+        window.location.pathname === '/' ? 
+        submitPhoneNumber(data) : 
+        submitOrder(data)
         reset()
     }
 

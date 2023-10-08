@@ -1,7 +1,23 @@
 import { root_url } from "./global";
 
-export  function submitPhoneNumber(obj){
+export function submitPhoneNumber(obj){
     fetch(`${root_url}sale/send`, {
+        method: 'POST',
+        body: JSON.stringify(obj),
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        }
+    })
+    .then(function(res){
+        return res.json()
+    })
+    .then(function(json){
+        console.log(json);
+    })
+}
+
+export function submitOrder(obj){
+    fetch(`${root_url}order/send`, {
         method: 'POST',
         body: JSON.stringify(obj),
         headers: {

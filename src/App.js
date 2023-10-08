@@ -74,7 +74,7 @@ function App() {
         <Route path={'/categories'} element={<Categories />} />
         <Route path={'/categories/:id'} element={<ProductByCategory />} />
         <Route path={'/products'} element={<Products products={products_state} />} />
-        <Route path={'/cart'} element={<CartPage cart_products={cart_products} />} />
+        <Route path={'/cart'} element={<CartPage />} />
         <Route path={'/products/:id'} element={<Product />} />
         <Route path={'/sales'} element={<Sales products={products_state} />} />
         <Route path={'/wishlist'} element={<WishlistPage wishlist_products={wishlist_products} />} />
