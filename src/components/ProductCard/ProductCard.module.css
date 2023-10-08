@@ -1,53 +1,27 @@
 .card_container {
-  @apply bg-transparent rounded-sm;
+  @apply bg-transparent rounded-sm h-[520px] shadow p-4 hover:shadow-lg;
 }
 
 .card {
-  @apply w-full h-[450px] relative block;
+  @apply w-full h-[440px] relative block;
 }
 
 .products_card_img {
-  @apply h-[350px] w-full rounded-normal border-2 border-black shadow dark:border-white relative;
+  @apply h-[350px] w-full rounded-normal relative bg-center;
+}
 
-  .hover_buttons_container {
-    @apply hidden;
-  }
+.buttons_container {
+  @apply flex;
 
-  &:hover {
-    .hover_buttons_container {
-      @apply flex absolute bottom-3 bg-transparent w-full;
-
-      & button {
-        @apply mx-2 w-1/2;
-
-        &:hover {
-          @apply scale-105;
-        }
-      }
-    }
+  & button {
+    @apply mx-2 w-1/2;
   }
 }
 
 .card_title {
-  @apply font-medium text-base;
+  @apply font-medium text-base whitespace-nowrap overflow-hidden text-ellipsis;
 }
 
 .card_description {
   @apply text-ellipsis line-clamp-4;
-}
-
-.price_row {
-  @apply flex justify-between align-baseline;
-}
-
-.main_price {
-  @apply font-semibold text-3xl;
-}
-
-.old_price {
-  @apply font-thin text-xl text-gray-400 line-through;
-}
-
-.discount_price {
-  @apply font-semibold text-xl text-red_sale;
 }

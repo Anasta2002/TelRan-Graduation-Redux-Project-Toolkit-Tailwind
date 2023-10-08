@@ -16,7 +16,6 @@ export default function Cart({cart_products}) {
       localStorage.setItem('shopping_cart', JSON.stringify(cart_products))
   }, [cart_products])
 
-
   return (    
   <div className={s.cart_elements}>
       <h1 className={[s.empty_cart, 'h2'].join(' ')}>Shopping cart</h1>
@@ -48,11 +47,11 @@ export default function Cart({cart_products}) {
                   )}
                 </div>
 
-                  <div className={s.order_details}>
-                      <p className='h3'>Order details</p>
-                      <p className='h4'>Total: {total}</p>                     
-                      <PhoneNumberForm className='primary' name='Order' />
-                  </div>
+                <div className={s.order_details}>
+                    <p className='h3'>Order details</p>
+                    <p className='h4'>Total: {total}</p>                     
+                    <PhoneNumberForm className='primary' name='Order' />
+                </div>
               </div>
             }
         </div>

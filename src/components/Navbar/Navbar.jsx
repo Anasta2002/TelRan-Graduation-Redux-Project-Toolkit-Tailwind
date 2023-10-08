@@ -12,6 +12,7 @@ import Sales from '../../assets/icons/Sales';
 
 export default function Navbar({cart_number, wish_number}) {
     const {isDarkMode, toggleTheme} = useContext(Context)
+
     return (
         <div className={s.nav}>
             <div className={s.left_part}>
@@ -28,7 +29,6 @@ export default function Navbar({cart_number, wish_number}) {
             <div className={s.right_part}>
                 <NavLink to={'/sales'}>
                     <Sales />
-                    {/* <p className={s.tooltip}>All sales</p> */}
                 </NavLink>
                 <MoodSwitcher isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
                 <NavLink to={'/wishlist'} className='relative'>

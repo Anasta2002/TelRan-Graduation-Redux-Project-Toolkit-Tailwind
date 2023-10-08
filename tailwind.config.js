@@ -20,13 +20,6 @@ module.exports = {
         normal: '30px',
         large: '50px',
       },
-      boxShadow: {
-        normal: '0px 4px 24px rgba(189, 189, 189, 0.23)',
-        normal_dark: '0px 4px 24px rgba(16, 31, 46, 0.53)',
-      },
-      fontSize: {
-        xxs: '0.625rem',
-      },
     },
   },
   plugins: [],

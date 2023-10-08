@@ -1,0 +1,15 @@
+.price_row {
+  @apply flex justify-between align-baseline py-3;
+}
+
+.main_price {
+  @apply font-semibold text-3xl;
+}
+
+.old_price {
+  @apply font-thin text-xl text-gray-400 line-through;
+}
+
+.discount_price {
+  @apply font-semibold text-xl text-red_sale;
+}

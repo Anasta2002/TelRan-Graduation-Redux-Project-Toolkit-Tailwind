@@ -1,5 +1,5 @@
 .nav {
-  @apply flex justify-between items-center p-4 shadow-xl;
+  @apply flex justify-between items-center p-4 shadow-xl sticky top-0 z-10;
 }
 
 .right_part {
@@ -11,14 +11,6 @@
     > svg {
       @apply md:ml-14 hover:scale-125;
     }
-
-    /* .tooltip {
-      @apply hidden;
-    } */
-
-    /* &:hover {
-      @apply bg-black;
-    } */
   }
 
   > svg {
@@ -27,9 +19,9 @@
 }
 
 .left_part {
-  @apply hidden md:flex items-center justify-between md:w-[400px] lg:w-[450px];
+  @apply hidden md:flex items-center justify-between md:w-[400px] xl:w-[450px];
 
   > a > button {
-    @apply md:w-28 lg:w-40;
+    @apply md:w-28 xl:w-40;
   }
 }

@@ -15,5 +15,5 @@
 }
 
 .footer_map {
-  @apply h-96 w-full md:h-[500px] lg:h-[600px] rounded-normal border-2 border-black dark:border-white;
+  @apply h-96 w-full md:h-[500px] xl:h-[600px] rounded-normal border-2 border-black dark:border-white;
 }

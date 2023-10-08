@@ -14,7 +14,6 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import WishlistPage from './pages/WishlistPage';
 import { Context } from './context';
-import { fetchProduct } from './store/slices/product_slice';
 import { fetchCategories } from './store/slices/category_slice';
 import { fetchProducts } from './store/slices/products_slice';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
@@ -58,19 +57,16 @@ function App() {
   const cart_products = useSelector(state => state.cart_products?.list)
 
   //wishlist state
-  const wishlist_products = useSelector(state => state.wishlist)
+  const wishlist_products = useSelector(state => state.wishlist?.list)
 
   //products state
-  // useEffect(() => {
-  //   dispatch(fetchProducts())
-  // }, [])
-  const products_state = useSelector(state => state.products.list);
+  const products_state = useSelector(state => state.products?.list);
 
   return (
-    <Context.Provider value={{ isDarkMode, toggleTheme, products_state }}>
+    <Context.Provider value={{ isDarkMode, toggleTheme, products_state, wishlist_products }}>
       <Navbar 
         cart_number={cart_products?.length} 
-        // wish_number={wishlist_products?.length}
+        wish_number={wishlist_products?.length}
       />
       <Breadcrumbs />
       <Routes>
@@ -81,7 +77,7 @@ function App() {
         <Route path={'/cart'} element={<CartPage cart_products={cart_products} />} />
         <Route path={'/products/:id'} element={<Product />} />
         <Route path={'/sales'} element={<Sales products={products_state} />} />
-        <Route path={'/wishlist'} element={<WishlistPage />} />
+        <Route path={'/wishlist'} element={<WishlistPage wishlist_products={wishlist_products} />} />
         <Route path={'*'} element={<NotFound/>} />
       </Routes>
       <Footer />

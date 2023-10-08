@@ -1,5 +1,5 @@
 .sorting_wrapper {
-  @apply flex flex-col align-middle my-5 lg:flex-row mt-6 mb-10;
+  @apply flex flex-col align-middle my-5 xl:flex-row mt-6 mb-10;
 }
 
 .sorting_section {

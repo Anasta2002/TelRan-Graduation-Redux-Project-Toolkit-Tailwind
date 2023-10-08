@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { root_url } from "../../global";
 
 export const fetchProduct = createAsyncThunk(
     'products/fetchProducts',
     async (id) => {
-        const url = `http://localhost:3333/products/${id}`;
+        const url = `${root_url}products/${id}`;
         const res = await fetch(url)
         const data = await res.json()
-        console.log('from request', data)
         return data
     }
 )

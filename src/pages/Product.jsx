@@ -15,9 +15,6 @@ export default function Product() {
 
   const product_state = useSelector(state => state.product.list)
 
-  console.log('product_page', product_state)
-  console.log(id)
-
   return (
     <div>
         <ProductDescription product_state={product_state}/>
