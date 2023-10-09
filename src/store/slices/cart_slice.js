@@ -31,7 +31,7 @@ const cart_slice = createSlice({
             state.list = state.list.filter(el => el.id !== action.payload);
           }
         },
-        clearCart: (state) => {
+        cleanCart: (state) => {
           state.list = [];
         },
     }
@@ -42,7 +42,7 @@ export const {
     deleteProductFromCart,
     incrementCart,
     decrementCart,
-    clearCart,
+    cleanCart,
   } = cart_slice.actions;
   
   export default cart_slice.reducer;

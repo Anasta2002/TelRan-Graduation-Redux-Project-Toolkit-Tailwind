@@ -1,5 +1,21 @@
 .cart_elements {
-  @apply w-full h-full rounded-2xl;
+  @apply w-full h-full rounded-2xl relative;
+}
+
+.button_back {
+  @apply absolute top-3 left-3 flex items-center cursor-pointer;
+
+  > span {
+    @apply hidden md:flex;
+  }
+}
+
+.clean_cart {
+  @apply absolute top-3 right-3 flex items-center cursor-pointer;
+
+  > span {
+    @apply hidden md:flex;
+  }
 }
 
 .precart {
@@ -31,11 +47,11 @@
 }
 
 .order_details {
-  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5 xl:absolute xl:right-[60px];
+  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5 md:absolute md:right-5 xl:right-[60px];
 }
 
 .full_cart_content {
-  @apply flex justify-between w-full flex-col relative xl:flex-row;
+  @apply flex flex-col md:flex-row justify-between w-full;
 }
 
 .cart_cards {
@@ -53,7 +69,7 @@
 .cart_card_content_right {
   @apply flex flex-col justify-center items-center text-xl xl:w-64 relative;
 
-  > svg {
-    @apply absolute top-3 right-3 cursor-pointer;
+  .delete_area {
+    @apply absolute top-3 right-3 w-7 h-7 cursor-pointer flex justify-center items-center;
   }
 }

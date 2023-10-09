@@ -3,11 +3,12 @@ import s from './Cart.module.css'
 import EmptyCartMobileLight from '../../assets/icons/EmptyCartMobileLight';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrementCart, deleteProductFromCart, incrementCart } from '../../store/slices/cart_slice';
+import { cleanCart, decrementCart, deleteProductFromCart, incrementCart } from '../../store/slices/cart_slice';
 import { root_url } from '../../global';
 import SubmitForm from '../UI/SubmitForm/SubmitForm';
 import Button from '../UI/Button/Button';
 import Delete from '../../assets/icons/Delete';
+import ArrowBack from '../../assets/icons/ArrowBack';
 
 export default function Cart() {
   const cart_products = useSelector(state => state.cart_products?.list)
@@ -18,7 +19,9 @@ export default function Cart() {
   }, [cart_products])
 
   return (    
-  <div className={s.cart_elements}>
+    <div className={s.cart_elements}>
+      <Link to={'/products'} className={s.button_back}><ArrowBack /><span>Return to the products</span></Link>
+      <p className={s.clean_cart} onClick={() => dispatch(cleanCart())}><span>Empty the cart </span><Delete /></p>
       <h1 className={[s.empty_cart, 'h2'].join(' ')}>Shopping cart</h1>
         <div className={s.precart}>
             {cart_products.length === 0 ? 
@@ -42,7 +45,7 @@ export default function Cart() {
                       </div>
                       <div className={s.cart_card_content_right}>
                         <span>${(el.discont_price ? el.discont_price * el.count : el.price * el.count).toFixed(2)}</span>
-                        <Delete onClick={() => dispatch(deleteProductFromCart(el.id))} />
+                        <span className={s.delete_area} onClick={() => dispatch(deleteProductFromCart(el.id))}><Delete /></span>
                       </div>
                     </div>
                   )}

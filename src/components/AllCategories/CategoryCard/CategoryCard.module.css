@@ -1,5 +1,5 @@
 .category_card {
-  @apply w-full h-[350px] rounded-normal relative hover:border;
+  @apply w-full h-[350px] rounded-normal relative hover:border shadow hover:shadow-lg;
 }
 
 .card_title {
