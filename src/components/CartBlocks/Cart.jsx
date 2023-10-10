@@ -52,7 +52,7 @@ export default function Cart() {
                 </div>
 
                 <div className={s.order_details}>
-                    <p className='h3'>Order details</p>
+                    <div className='h3'>Order details</div>
                     <p className='h4'>Total: 
                       {cart_products.reduce((acc, { discont_price, price, count }) => {
                         const actual_price = discont_price ? discont_price : price;

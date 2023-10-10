@@ -10,10 +10,7 @@ import { addProductToWishlist } from '../../store/slices/wishlist_slice';
 
 
 export default function ProductDescription({product_state}) {
-
   const dispatch = useDispatch()
-  // const addToCartBtn = () => dispatch(addProductToTotalCart({ id, title, price, image, discont_price, description }))
-  const addToWishBtn = () => dispatch(addProductToWishlist({ ...product_state}))
 
   return (
     <Container>
@@ -25,8 +22,10 @@ export default function ProductDescription({product_state}) {
               <div className={s.card_descr}>
                 <h2 className='h2'>{product_state.title}</h2>
                   <PriceRow price={el.price} discont_price={el.discont_price} />
-                  <Button onClick={ () => dispatch(addProductToTotalCart(...product_state))} name='Add to cart' className='primary' />
-                  <Button onClick={addToWishBtn} name='Add to wishlist' className='primary' />
+                  <div className={s.buttons_descr}>
+                    <Button onClick={ () => dispatch(addProductToTotalCart(...product_state))} name='Add to cart' className='primary' />
+                    <Button onClick={() => dispatch(addProductToWishlist({ ...product_state}))} name='Add to wishlist' className='primary' />                    
+                  </div>
                   <div className='mt-10'>
                       <h4 className='h4'><b>Description:</b></h4>
                       <p className='text-xl'>{el.description}</p>                             

@@ -19,7 +19,7 @@
 }
 
 .left_part {
-  @apply hidden md:flex items-center justify-between md:w-[400px] xl:w-[450px];
+  @apply flex items-center justify-between md:w-[400px] xl:w-[450px];
 
   > a > button {
     @apply md:w-28 xl:w-40;

@@ -6,12 +6,15 @@
 .card_descr {
   grid-area: card_descr;
   justify-self: start;
+}
+
+.buttons_descr {
+  @apply flex justify-between gap-2;
 
   > button {
     @apply xl:w-1/2;
   }
 }
-
 .container_card {
   @apply flex flex-col xl:grid items-center gap-5;
   grid-template-areas: "img card_descr";

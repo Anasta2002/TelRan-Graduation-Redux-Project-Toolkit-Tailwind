@@ -9,21 +9,33 @@ import Badge from '../UI/Badge/Badge';
 import Heart from '../../assets/icons/Heart';
 import { Context } from '../../context';
 import Sales from '../../assets/icons/Sales';
+import HomeIcon from '../../assets/icons/HomeIcon';
+import Categories from '../../assets/icons/Categories';
+import Products from '../../assets/icons/Products';
 
 export default function Navbar({cart_number, wish_number}) {
-    const {isDarkMode, toggleTheme} = useContext(Context)
+    const {isDarkMode, toggleTheme, isMobile} = useContext(Context)
 
     return (
         <div className={s.nav}>
             <div className={s.left_part}>
                 <Link to={'/'}>
-                    <img src={logo} alt='logo' />
+                    { isMobile ? 
+                        <HomeIcon /> : 
+                        <img src={logo} alt='logo' />
+                    }
                 </Link>
                 <Link to={'/categories'} style={{textDecoration: 'none', width: '125px'}}>
-                    <Button className='primary' name='Catalog'/>
+                    { isMobile ? 
+                        <Categories /> : 
+                        <Button className='primary' name='Catalog'/> 
+                    }
                 </Link>
                 <NavLink to={'/products'}>
-                    <Button className='primary' name='All products'/>
+                    { isMobile ? 
+                        <Products /> : 
+                        <Button className='primary' name='All products'/>
+                    }
                 </NavLink>
             </div>
             <div className={s.right_part}>

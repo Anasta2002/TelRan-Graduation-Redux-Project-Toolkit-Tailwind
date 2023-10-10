@@ -47,7 +47,11 @@
 }
 
 .order_details {
-  @apply border-2 border-green rounded-normal w-3/12 h-96 p-5 md:absolute md:right-5 xl:right-[60px];
+  @apply border-2 border-green rounded-normal w-full my-2 h-96 md:w-3/12  p-5 md:absolute md:right-5 xl:right-[60px];
+
+  > div {
+    @apply hidden md:block;
+  }
 }
 
 .full_cart_content {
