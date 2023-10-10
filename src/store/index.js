@@ -11,7 +11,7 @@ const store = configureStore({
         products: products_slice,
         categories: category_slice,
         product: product_slice,
-        wishlidt: wishlist_slice,
+        wishlist: wishlist_slice,
         product_category: productByCategory_slice,
         cart_products: cart_slice,
     }

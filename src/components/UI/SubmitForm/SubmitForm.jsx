@@ -4,6 +4,7 @@ import Button from '../Button/Button'
 import { useForm } from 'react-hook-form'
 import { submitOrder, submitPhoneNumber } from '../../../requests'
 import s from './SubmitForm.module.css'
+import { useLocation } from 'react-router-dom';
 
 export default function SubmitForm({ name, className }) {
     const { register, formState: { errors }, handleSubmit, reset } = useForm({
@@ -18,8 +19,9 @@ export default function SubmitForm({ name, className }) {
             },
     })
 
+    const location = useLocation();
     const submit = data => {
-        window.location.pathname === '/' ? 
+        location.pathname === '/' ? 
         submitPhoneNumber(data) : 
         submitOrder(data)
         reset()

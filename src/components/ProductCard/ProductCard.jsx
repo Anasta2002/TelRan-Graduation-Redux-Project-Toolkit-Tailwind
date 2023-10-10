@@ -9,10 +9,14 @@ import Button from '../UI/Button/Button';
 import { addProductToTotalCart } from '../../store/slices/cart_slice'
 import { addProductToWishlist } from '../../store/slices/wishlist_slice'
 import PriceRow from '../UI/PriceRow/PriceRow'
+import { useLocation } from 'react-router-dom'
 
 export default function ProductCard({ id, title, price, image, discont_price, description }) {
   const dispatch = useDispatch()
-  const backgroundImage = `url(${root_url}${image})`
+  const backgroundImage = `url(${root_url}${image})`  
+
+  const location = useLocation();
+  const isWishlist = location.pathname === '/wishlist'
 
   const addToCartBtn = (e) => {
     e.stopPropagation()
@@ -31,16 +35,16 @@ export default function ProductCard({ id, title, price, image, discont_price, de
   return (
     <div className={s.card_container}>
       <Link className={s.card} to={`/products/${id}`} onClick={handleCardClick} >
-        <div style={{backgroundImage: `${backgroundImage}`, backgroundSize: 'cover'}} className={s.products_card_img}>
-
-        </div>
-        <PriceRow price={price} discont_price={discont_price} />
+        <div style={{backgroundImage: `${backgroundImage}`, backgroundSize: 'cover'}} className={s.products_card_img} />
+        { !isWishlist && <PriceRow price={price} discont_price={discont_price} /> }
         <h4 className={s.card_title}>{title}</h4>
       </Link>  
-      <div className={s.buttons_container}>
-        <Button className='primary' onClick={addToWishtBtn} name={<Heart />} />
-        <Button className='primary' onClick={addToCartBtn} name={<Cart />} />
-      </div>
+      { !isWishlist && 
+        <div className={s.buttons_container}>
+          <Button className='primary' onClick={addToWishtBtn} name={<Heart />} />
+          <Button className='primary' onClick={addToCartBtn} name={<Cart />} />
+        </div>      
+      }
     </div>
   )
 }

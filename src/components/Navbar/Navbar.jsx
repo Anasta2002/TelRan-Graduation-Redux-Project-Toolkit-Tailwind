@@ -25,7 +25,7 @@ export default function Navbar({cart_number, wish_number}) {
                         <img src={logo} alt='logo' />
                     }
                 </Link>
-                <Link to={'/categories'} style={{textDecoration: 'none', width: '125px'}}>
+                <Link to={'/categories'} className={s.categories_link}>
                     { isMobile ? 
                         <Categories /> : 
                         <Button className='primary' name='Catalog'/> 
