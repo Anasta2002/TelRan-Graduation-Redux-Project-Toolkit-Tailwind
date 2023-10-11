@@ -1,0 +1,18 @@
+.breadcrumbs {
+  @apply flex items-center font-medium capitalize text-xl my-5 bg-transparent;
+}
+
+.breadcrumbsPath {
+  @apply flex items-center;
+}
+.crumb {
+  @apply flex items-center bg-transparent;
+
+  > a {
+    @apply no-underline hover:underline bg-transparent;
+  }
+
+  > svg {
+    @apply bg-transparent;
+  }
+}

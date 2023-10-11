@@ -16,8 +16,8 @@ import WishlistPage from './pages/WishlistPage';
 import { Context } from './context';
 import { fetchCategories } from './store/slices/category_slice';
 import { fetchProducts } from './store/slices/products_slice';
-import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import { useMediaQuery } from 'react-responsive';
+import Breadcrumbs from './components/UI/Breadcrumbs/Breadcrumbs';
 
 function App() {
   //function for theme switching

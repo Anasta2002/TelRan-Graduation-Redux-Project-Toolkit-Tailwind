@@ -2,14 +2,12 @@ import React from 'react'
 import s from '../SortingBlock.module.css'
 import { useDispatch } from 'react-redux';
 import { sortProductsAction } from '../../../store/slices/products_slice';
-import { sortProductCategory } from '../../../store/slices/productByCategory_slice';
 
 export default function SortForm({state}) {
   const dispatch = useDispatch()
 
   const order = e => {
     dispatch(sortProductsAction(e.target.value))
-    dispatch(sortProductCategory(e.target.value))
   } 
 
   return (

@@ -2,7 +2,6 @@ import React, { useState} from 'react'
 import s from '../SortingBlock.module.css'
 import { useDispatch } from 'react-redux';
 import { getCheapProductAction } from '../../../store/slices/products_slice';
-import { getCheapProductCategory } from '../../../store/slices/productByCategory_slice';
 
 
 export default function CheapProduct() {
@@ -14,7 +13,6 @@ export default function CheapProduct() {
 
   const getCheapProducts = e => {
     dispatch(getCheapProductAction(e.target.checked))
-    dispatch(getCheapProductCategory(e.target.checked))
   }
 
   return (

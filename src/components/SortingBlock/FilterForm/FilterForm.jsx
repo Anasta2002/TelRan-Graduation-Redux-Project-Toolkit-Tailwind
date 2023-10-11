@@ -2,7 +2,6 @@ import React from 'react'
 import s from '../SortingBlock.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { filterProductsAction, selectProductsStatus } from '../../../store/slices/products_slice';
-import { filterProductCategory } from '../../../store/slices/productByCategory_slice';
 
 export default function FilterForm() {
   const dispatch = useDispatch()
@@ -16,7 +15,6 @@ export default function FilterForm() {
   
     if (status === 'ready') {
       dispatch(filterProductsAction({ min_value, max_value }));
-      dispatch(filterProductCategory({min_value, max_value}))
     } else {
       console.log('Products are still loading. Please wait.');
     }
