@@ -9,30 +9,26 @@ import PriceRow from '../UI/PriceRow/PriceRow';
 import { addProductToWishlist } from '../../store/slices/wishlist_slice';
 
 
-export default function ProductDescription({product_state}) {
+export default function ProductDescription({product}) {
   const dispatch = useDispatch()
 
   return (
     <Container>
-      <h2 className='h2'>{product_state.title}</h2>
+      <h2 className='h2'>{product?.title}</h2>
         <div className={s.container_card}>
-          {product_state.map(el => 
-            <>
-              <div style={{backgroundImage: `url(${root_url}${el.image})`, backgroundSize: 'cover'}} className={s.img} />
-              <div className={s.card_descr}>
-                <h2 className='h2'>{product_state.title}</h2>
-                  <PriceRow price={el.price} discont_price={el.discont_price} />
-                  <div className={s.buttons_descr}>
-                    <Button onClick={ () => dispatch(addProductToTotalCart(...product_state))} name='Add to cart' className='primary' />
-                    <Button onClick={() => dispatch(addProductToWishlist({ ...product_state}))} name='Add to wishlist' className='primary' />                    
-                  </div>
-                  <div className='mt-10'>
-                      <h4 className='h4'><b>Description:</b></h4>
-                      <p className='text-xl'>{el.description}</p>                             
-                  </div>
+          <div style={{backgroundImage: `url(${root_url}${product.image})`, backgroundSize: 'cover'}} className={s.img} />
+          <div className={s.card_descr}>
+            <h2 className='h2'>{product?.title}</h2>
+              <PriceRow price={product.price} discont_price={product?.discont_price} />
+              <div className={s.buttons_descr}>
+                <Button onClick={ () => dispatch(addProductToTotalCart({...product}))} name='Add to cart' className='primary' />
+                <Button onClick={() => dispatch(addProductToWishlist({...product}))} name='Add to wishlist' className='primary' />                    
               </div>
-            </>
-          )}
+              <div className='mt-10'>
+                  <h4 className='h4'><b>Description:</b></h4>
+                  <p className='text-xl'>{product.description}</p>                             
+              </div>
+          </div>
         </div>
     </Container>
   )

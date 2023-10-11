@@ -1,30 +1,27 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard/ProductCard'
 import SortingBlock from '../components/SortingBlock/SortingBlock';
-import { fetchProductByCategory } from '../store/slices/productByCategory_slice'
 import Container from '../components/UI/Container/Container';
 
 
-export default function ProductByCategory() {
+export default function ProductByCategory(products_state) {
   const { id } = useParams()
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(fetchProductByCategory(id))
-  }, [])
+  const productInCategory = useSelector(state => state.categories.list)
+  const category_title = productInCategory.find(el => el.id === +id)
 
-  const products = useSelector(state => state.product_category.list)
-  const title = useSelector(state => state.product_category.category)
+  const products = products_state.products_state
 
   return (
     <Container>
-      <h2 className='h2'>{title?.title }</h2>
+      <h2 className='h2'>{category_title?.title }</h2>
+      
       <SortingBlock />
       <div className='cards_container'>
         {
-          products
+          products?.filter(el => el.categoryId === +id)
           ?.filter(el => el.show_product)
           .map(el => <ProductCard key={el.id} {...el} />)
         }
