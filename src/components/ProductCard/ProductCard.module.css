@@ -1,5 +1,5 @@
 .card_container {
-  @apply bg-transparent rounded-sm h-[520px] shadow p-4 hover:shadow-lg;
+  @apply bg-transparent rounded-xl h-[520px] shadow p-4 hover:shadow-2xl;
 }
 
 .card {
