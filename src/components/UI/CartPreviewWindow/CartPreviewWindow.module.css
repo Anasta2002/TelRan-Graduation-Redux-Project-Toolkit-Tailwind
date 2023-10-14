@@ -1,0 +1,3 @@
+.window_wrapper {
+  @apply w-10/12 h-10 md:w-96 bg-green rounded-2xl shadow-2xl;
+}

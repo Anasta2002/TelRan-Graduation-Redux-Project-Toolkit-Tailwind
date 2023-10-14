@@ -34,6 +34,9 @@ const cart_slice = createSlice({
         cleanCart: (state) => {
           state.list = [];
         },
+        showCartPreviewWindow: (state, action) => {
+          state.list.push({ ...action.payload, count: 1 });
+        }
     }
 })
 

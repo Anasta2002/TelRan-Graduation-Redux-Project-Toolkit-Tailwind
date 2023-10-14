@@ -11,6 +11,7 @@ import { addProductToWishlist, removeFromWishlist } from '../../store/slices/wis
 import PriceRow from '../UI/PriceRow/PriceRow'
 import { Context } from '../../context'
 import HeartFilled from '../../assets/icons/HeartFilled';
+import CartPreviewWindow from '../UI/CartPreviewWindow/CartPreviewWindow'
 
 export default function ProductCard({ id, title, price, image, discont_price, description }) {
   const dispatch = useDispatch()
@@ -23,11 +24,16 @@ export default function ProductCard({ id, title, price, image, discont_price, de
     dispatch(addProductToTotalCart({ id, title, image, discont_price, description, price }))
   };
 
+  const cartFunctions = () => {
+    dispatch(addProductToWishlist({ id, title, image, discont_price, description, price }));
+    return <CartPreviewWindow state={{ id, title, image, discont_price, description, price }} />
+  }
+
   const addToWishtBtn = (e) => {
     if (inWishlist) {
       dispatch(removeFromWishlist(id));
     } else {
-      dispatch(addProductToWishlist({ id, title, image, discont_price, description, price }));
+      cartFunctions()
     }
   };
 

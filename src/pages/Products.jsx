@@ -5,7 +5,7 @@ import Container from '../components/UI/Container/Container';
 
 
 export default function Products({products}) {
-  
+
   return (
     <Container>
       <h1 className='h2'>All products</h1>

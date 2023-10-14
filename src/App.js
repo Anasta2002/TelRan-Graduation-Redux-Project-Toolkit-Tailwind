@@ -18,6 +18,7 @@ import { fetchCategories } from './store/slices/category_slice';
 import { fetchProducts } from './store/slices/products_slice';
 import { useMediaQuery } from 'react-responsive';
 import Breadcrumbs from './components/UI/Breadcrumbs/Breadcrumbs';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   //function for theme switching
@@ -84,6 +85,7 @@ function App() {
         <Route path={'/products/:id'} element={<Product />} />
         <Route path={'/sales'} element={<Sales products={products_state} />} />
         <Route path={'/wishlist'} element={<WishlistPage wishlist_products={wishlist_products} />} />
+        <Route path={'/thankyou'} element={<ThankYou />} />
         <Route path={'*'} element={<NotFound/>} />
       </Routes>
       <Footer />

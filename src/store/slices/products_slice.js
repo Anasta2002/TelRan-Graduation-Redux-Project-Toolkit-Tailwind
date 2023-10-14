@@ -21,22 +21,23 @@ const products_slice = createSlice({
     reducers: {
         sortProductsAction(state, action) {
             if (action.payload === 'default') {
-                state.list.sort((a, b) => a.id - b.id);
+                state.list.sort((a, b) => a.id - b.id)
             } else if (action.payload === 'title') {
-                state.list.sort((a, b) => a.title.localeCompare(b.title));
+                state.list.sort((a, b) => a.title.localeCompare(b.title))
             } else if (action.payload === 'price_low') {
-                state.list.sort((a, b) => a.price - b.price);
+                state.list.sort((a, b) => a.price - b.price)
             } else if (action.payload === 'price_high') {
-                state.list.sort((a, b) => b.price - a.price);
+                state.list.sort((a, b) => b.price - a.price)
             }
         },
         filterProductsAction(state, action) {
             const { min_value, max_value } = action.payload;
             state.list = state.list.map((el) => {
-                if (el.price >= min_value && el.price <= max_value) {
-                    return { ...el, show_product: true };
+                const actual_price = el.discont_price ? el.discont_price : el.price
+                if (actual_price >= min_value && actual_price <= max_value) {
+                    return { ...el, show_product: true }
                 } else {
-                    return { ...el, show_product: false };
+                    return { ...el, show_product: false }
                 }
             });
         },
@@ -44,16 +45,21 @@ const products_slice = createSlice({
             if (action.payload) {
                 state.list = state.list.map(el => {
                     if (!el.discont_price) {
-                        return { ...el, show_product: false };
+                        return { ...el, show_product: false }
                     }
                     return el;
                 });
             } else {
                 state.list = state.list.map(el => {
-                    return { ...el, show_product: true };
+                    return { ...el, show_product: true }
                 });
             }
         },
+        clearAllFilters(state) {
+            state.list = state.list.map(el => {
+                return { ...el, show_product: true }
+            });
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -71,5 +77,5 @@ const products_slice = createSlice({
 })
 
 export default products_slice.reducer;
-export const { sortProductsAction, filterProductsAction, getCheapProductAction } = products_slice.actions;
+export const { sortProductsAction, filterProductsAction, getCheapProductAction, clearAllFilters } = products_slice.actions;
 export const selectProductsStatus = (state) => state.products.status;
