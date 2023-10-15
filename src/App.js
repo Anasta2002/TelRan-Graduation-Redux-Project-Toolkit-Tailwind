@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
@@ -10,7 +10,7 @@ import Sales from './pages/Sales';
 import ProductByCategory from './pages/ProductByCategory';
 import Footer from './components/Footer/Footer';
 import CartPage from './pages/CartPage';
-import { useEffect, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import WishlistPage from './pages/WishlistPage';
 import { Context } from './context';
@@ -19,6 +19,7 @@ import { fetchProducts } from './store/slices/products_slice';
 import { useMediaQuery } from 'react-responsive';
 import Breadcrumbs from './components/UI/Breadcrumbs/Breadcrumbs';
 import ThankYou from './pages/ThankYou';
+import ScrollToTheTop from './components/ScrollToTheTop/ScrollToTheTop';
 
 function App() {
   //function for theme switching
@@ -69,6 +70,13 @@ function App() {
   //products state
   const products_state = useSelector(state => state.products?.list);
 
+  //ref for footer
+  const footerRef = useRef(null);
+
+  const location = useLocation();
+  const wishlist = location.pathname === '/wishlist'
+  const cart = location.pathname === '/cart'
+
   return (
     <Context.Provider value={{ isDarkMode, toggleTheme, products_state, wishlist_products, isMobile }}>
       <Navbar 
@@ -88,6 +96,7 @@ function App() {
         <Route path={'/thankyou'} element={<ThankYou />} />
         <Route path={'*'} element={<NotFound/>} />
       </Routes>
+      { !wishlist && !cart && <ScrollToTheTop footerRef={footerRef} /> }
       <Footer />
       </Context.Provider>
   );
