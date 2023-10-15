@@ -20,6 +20,7 @@ import { useMediaQuery } from 'react-responsive';
 import Breadcrumbs from './components/UI/Breadcrumbs/Breadcrumbs';
 import ThankYou from './pages/ThankYou';
 import ScrollToTheTop from './components/ScrollToTheTop/ScrollToTheTop';
+import BackButton from './components/BackButton./BackButton';
 
 function App() {
   //function for theme switching
@@ -77,12 +78,18 @@ function App() {
   const wishlist = location.pathname === '/wishlist'
   const cart = location.pathname === '/cart'
 
+  useEffect(() => {
+    localStorage.setItem('shopping_cart', JSON.stringify(cart_products))
+    localStorage.setItem('wishlist_products', JSON.stringify(wishlist_products))
+  }, [cart_products, wishlist_products])
+
   return (
     <Context.Provider value={{ isDarkMode, toggleTheme, products_state, wishlist_products, isMobile, cart_products }}>
       <Navbar 
         cart_number={cart_products?.length} 
         wish_number={wishlist_products?.length}
       />
+      <BackButton />
       <Breadcrumbs />
       <Routes>
         <Route path={'/'} element={<Home />} />

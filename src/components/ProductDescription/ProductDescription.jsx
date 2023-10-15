@@ -8,12 +8,17 @@ import Container from '../UI/Container/Container';
 import PriceRow from '../UI/PriceRow/PriceRow';
 import { addProductToWishlist, removeFromWishlist } from '../../store/slices/wishlist_slice';
 import { Context } from '../../context';
+import Heart from '../../assets/icons/Heart';
+import HeartFilled from '../../assets/icons/HeartFilled';
+import Cart from '../../assets/icons/Cart';
+import FullCart from '../../assets/icons/FullCart';
 
 
 export default function ProductDescription({product}) {
   const dispatch = useDispatch()
-  const { wishlist_products } = useContext(Context)
-  const inWishlist = wishlist_products.find(el => el.id === product.id)
+  const { wishlist_products, cart_products } = useContext(Context);
+  const inWishlist = wishlist_products.find(el => el.id === product.id);
+  const inCart = cart_products.find(el => el.id === product.id);
 
   const addToWishtBtn = (e) => {
     if (inWishlist) {
@@ -32,8 +37,8 @@ export default function ProductDescription({product}) {
             <h2 className='h2'>{product?.title}</h2>
               <PriceRow price={product.price} discont_price={product?.discont_price} />
               <div className={s.buttons_descr}>
-                <Button onClick={() => dispatch(addProductToTotalCart({...product}))} name='Add to cart' className='primary' />
-                <Button onClick={addToWishtBtn} name={inWishlist ? 'Remove from wishlist' : 'Add to wishlist'} className='primary' />                    
+                <Button onClick={() => dispatch(addProductToTotalCart({...product}))} name={!inCart ? <Cart /> : <FullCart />} className='primary' />
+                <Button onClick={addToWishtBtn} name={!inWishlist ? <Heart/> : <HeartFilled />}  className='primary' />                 
               </div>
               <div className='mt-10'>
                   <h4 className='h4'><b>Description:</b></h4>

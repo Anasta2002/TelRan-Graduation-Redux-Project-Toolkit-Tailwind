@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import s from './Cart.module.css'
 import EmptyCartMobileLight from '../../assets/icons/EmptyCartMobileLight';
 import { Link } from 'react-router-dom';
@@ -13,10 +13,6 @@ import ArrowBack from '../../assets/icons/ArrowBack';
 export default function Cart() {
   const cart_products = useSelector(state => state.cart_products?.list)
   const dispatch = useDispatch()
-
-  useEffect(() => {
-      localStorage.setItem('shopping_cart', JSON.stringify(cart_products))
-  }, [cart_products])
 
   return (    
     <div className={s.cart_elements}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Button from '../UI/Button/Button'
 import BreadcrumbsIcon from '../../assets/icons/Breadcrumbs'
+import ArrowUp from '../../assets/icons/ArrowUp';
 
 export default function ScrollToTheTop() {
   const [showButton, setShowButton] = useState(false);
@@ -51,7 +52,7 @@ export default function ScrollToTheTop() {
   return (
     <div className='w-1/2 lg:w-1/6 pt-10 mt-10 mx-auto'>
       {showButton &&
-        <Button className='primary' onClick={scrollToTop} name='Scroll to the top' />
+        <Button className='primary' onClick={scrollToTop} name='Scroll to the top' icon={<ArrowUp />} />
       }
     </div>
   );
