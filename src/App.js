@@ -78,7 +78,7 @@ function App() {
   const cart = location.pathname === '/cart'
 
   return (
-    <Context.Provider value={{ isDarkMode, toggleTheme, products_state, wishlist_products, isMobile }}>
+    <Context.Provider value={{ isDarkMode, toggleTheme, products_state, wishlist_products, isMobile, cart_products }}>
       <Navbar 
         cart_number={cart_products?.length} 
         wish_number={wishlist_products?.length}
