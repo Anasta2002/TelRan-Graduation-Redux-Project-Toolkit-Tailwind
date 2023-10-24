@@ -12,6 +12,10 @@
 
 .sorting_section {
   @apply flex items-center py-3;
+
+  .css-13cymwt-control {
+    @apply w-20 bg-green;
+  }
 }
 
 .sorting_title {
@@ -19,7 +23,7 @@
 }
 
 .price_input {
-  @apply w-24 h-11 border rounded-md mx-2;
+  @apply w-24 h-11 border rounded-md mx-2 px-2;
 }
 
 .selector {
@@ -39,7 +43,7 @@
 }
 
 .switch {
-  @apply relative h-[26px] w-12 rounded-[40px] flex items-center;
+  @apply relative h-[26px] w-12 rounded-[40px] flex items-center mr-2.5;
 }
 
 .switch_input {
@@ -58,11 +62,15 @@
   @apply absolute cursor-pointer top-0 left-0 bottom-0 right-0 bg-gray-50 rounded-2xl;
 
   &.switch_slider::before {
-    @apply content-[''] absolute cursor-pointer left-[2px] top-[2px] bg-white h-[22px] w-[22px] rounded-full;
+    @apply content-[''] absolute cursor-pointer left-[2px] top-[2px] bg-white h-[22px] w-[22px] rounded-full border border-green;
     transition: all ease 0.3s;
   }
 
   &:checked + .switch_slider::before {
     @apply translate-x-[20px];
   }
+}
+
+.select {
+  @apply w-[270px] h-11 border rounded-md px-2;
 }

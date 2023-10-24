@@ -23,7 +23,7 @@ export default function CheapProduct() {
         />
         <span className={s.switch_slider} />
       </label>
-      <span className={s.sorting_description}>Discounted products</span>
+      <span className={s.sorting_title}>Discounted products</span>
     </div>
   );
 }

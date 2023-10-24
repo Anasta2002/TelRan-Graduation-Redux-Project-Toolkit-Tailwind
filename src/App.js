@@ -74,6 +74,7 @@ function App() {
   //ref for footer
   const footerRef = useRef(null);
 
+  //work with location
   const location = useLocation();
   const wishlist = location.pathname === '/wishlist'
   const cart = location.pathname === '/cart'
