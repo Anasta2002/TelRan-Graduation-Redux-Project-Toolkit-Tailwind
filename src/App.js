@@ -21,6 +21,7 @@ import Breadcrumbs from './components/UI/Breadcrumbs/Breadcrumbs';
 import ThankYou from './pages/ThankYou';
 import ScrollToTheTop from './components/ScrollToTheTop/ScrollToTheTop';
 import BackButton from './components/BackButton./BackButton';
+// import Menuicon from './assets/icons/MenuIcon';
 
 function App() {
   //function for theme switching
@@ -84,28 +85,38 @@ function App() {
     localStorage.setItem('wishlist_products', JSON.stringify(wishlist_products))
   }, [cart_products, wishlist_products])
 
+  //for mobile nav
+  const [ isMenuOpen, setIsMenuOpen ] = useState(false)
+  const openMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <Context.Provider value={{ isDarkMode, toggleTheme, products_state, wishlist_products, isMobile, cart_products }}>
-      <Navbar 
-        cart_number={cart_products?.length} 
-        wish_number={wishlist_products?.length}
-      />
-      <BackButton />
-      <Breadcrumbs />
-      <Routes>
-        <Route path={'/'} element={<Home />} />
-        <Route path={'/categories'} element={<Categories />} />
-        <Route path={'/categories/:id'} element={<ProductByCategory products_state={products_state} />} />
-        <Route path={'/products'} element={<Products products={products_state} />} />
-        <Route path={'/cart'} element={<CartPage />} />
-        <Route path={'/products/:id'} element={<Product />} />
-        <Route path={'/sales'} element={<Sales products={products_state} />} />
-        <Route path={'/wishlist'} element={<WishlistPage wishlist_products={wishlist_products} />} />
-        <Route path={'/thankyou'} element={<ThankYou />} />
-        <Route path={'*'} element={<NotFound/>} />
-      </Routes>
-      { !wishlist && !cart && <ScrollToTheTop footerRef={footerRef} /> }
-      <Footer />
+      <div className='relative'>
+        <Navbar 
+          cart_number={cart_products?.length} 
+          wish_number={wishlist_products?.length}
+          isMenuOpen={isMenuOpen}
+          openMenu={openMenu}
+        />
+        <BackButton />
+        <Breadcrumbs />
+        <Routes>
+          <Route path={'/'} element={<Home />} />
+          <Route path={'/categories'} element={<Categories />} />
+          <Route path={'/categories/:id'} element={<ProductByCategory products_state={products_state} />} />
+          <Route path={'/products'} element={<Products products={products_state} />} />
+          <Route path={'/cart'} element={<CartPage />} />
+          <Route path={'/products/:id'} element={<Product />} />
+          <Route path={'/sales'} element={<Sales products={products_state} />} />
+          <Route path={'/wishlist'} element={<WishlistPage wishlist_products={wishlist_products} />} />
+          <Route path={'/thankyou'} element={<ThankYou />} />
+          <Route path={'*'} element={<NotFound/>} />
+        </Routes>
+        { !wishlist && !cart && <ScrollToTheTop footerRef={footerRef} /> }
+        <Footer />
+      </div>
       </Context.Provider>
   );
 }

@@ -2,7 +2,7 @@
   @apply w-full flex justify-end mb-5 lg:relative;
 
   .clear_filters {
-    @apply bottom-5 right-5 flex absolute;
+    @apply bottom-5 right-5 flex absolute cursor-pointer;
   }
 }
 

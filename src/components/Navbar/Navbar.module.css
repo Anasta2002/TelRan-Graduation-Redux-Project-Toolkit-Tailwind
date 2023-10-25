@@ -1,9 +1,9 @@
 .nav {
-  @apply w-full flex justify-center md:justify-between items-center px-4 md:py-1 shadow-xl sticky top-0 z-10 md:px-8;
+  @apply w-1/2 mb-5 rounded-md absolute md:w-full flex flex-col md:flex-row justify-center md:justify-between items-center px-4 md:py-1 shadow-xl md:sticky top-0 z-10 md:px-8;
 }
 
 .right_part {
-  @apply flex items-center;
+  @apply flex items-center flex-col md:flex-row;
 
   > a {
     @apply block no-underline p-5 font-medium rounded-md text-base md:p-1;
@@ -19,10 +19,10 @@
 }
 
 .left_part {
-  @apply flex items-center justify-between md:w-[400px] xl:w-[450px];
+  @apply flex items-center flex-col md:flex-row justify-between md:w-[400px] xl:w-[450px];
 
   > a {
-    @apply block no-underline font-medium rounded-md text-base p-5 md:p-0;
+    @apply flex items-center no-underline font-medium rounded-md text-base p-5 md:p-0 md:block;
   }
 
   > a > button {
@@ -32,4 +32,8 @@
 
 .categories_link {
   @apply md:w-32 no-underline;
+}
+
+.top_line {
+  @apply w-full flex fixed top-0 justify-between shadow-xl;
 }
