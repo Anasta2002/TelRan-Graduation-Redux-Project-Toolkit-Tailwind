@@ -41,8 +41,8 @@ export default function Navbar({ cart_number, wish_number, isMenuOpen, openMenu 
                                         <Heart isDarkMode={isDarkMode} /> Wishlist
                                     </NavLink>
                                 </div>
-                                <div className='w-20 h-20 cursor-pointer flex justify-end items-center' onClick={openMenu}><Menuicon /></div>
                             </div>
+                            <div className='w-20 h-20 cursor-pointer flex justify-end items-center' onClick={openMenu}><Menuicon /></div>
                         </div>
                     ) : (
                         <div className={s.top_line}>

@@ -21,7 +21,6 @@ import Breadcrumbs from './components/UI/Breadcrumbs/Breadcrumbs';
 import ThankYou from './pages/ThankYou';
 import ScrollToTheTop from './components/ScrollToTheTop/ScrollToTheTop';
 import BackButton from './components/BackButton./BackButton';
-// import Menuicon from './assets/icons/MenuIcon';
 
 function App() {
   //function for theme switching
